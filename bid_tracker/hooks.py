@@ -23,26 +23,23 @@ doc_events = {
     }
 }
 
+add_to_apps_screen = [
+    {
+        "name": "bid_tracker",
+        "logo": "/assets/frappe/images/frappe-framework-logo.svg",
+        "title": "Bid Tracker",
+        "route": "/app/bid-tracker",
+    }
+]
 
 fixtures = [
-    "Workflow",
-    "Workflow State",
-    "Workflow Action Master",
-    "Notification",
-    "Role",
-    "Dashboard",
-    "Number Card",
-    "Report",
-    {
-    "dt": "Workspace",
-    "filters": [
-        ["name", "in", ["Bid Tracker"]]
-    ]
-    },
-    {
-    "dt": "Dashboard Chart",
-    "filters": [
-        ["name", "in", ["Bid Status Breakdown"]]
-    ]
-    }
+    {"dt": "Workflow", "filters": [["name", "in", ["Bid Record Workflow"]]]},
+    {"dt": "Workflow State"},
+    {"dt": "Workflow Action Master"},
+    {"dt": "Notification", "filters": [["name", "in", ["Bid Submitted Notification", "Bid Won Notification", "Bid Closed Notification", "Bid Withdrawn Notification"]]]},
+    {"dt": "Role", "filters": [["name", "in", ["BD Team", "BD Manager", "Finance Reviewer", "Executive Viewer"]]]},
+    {"dt": "Dashboard", "filters": [["name", "in", ["Pre-contract P&L Dashboard"]]]},
+    {"dt": "Dashboard Chart", "filters": [["name", "in", ["Bid Status Breakdown"]]]},
+    {"dt": "Number Card", "filters": [["name", "in", ["Total Bid Cost", "Estimated Contract Value", "ROI Ratio", "Estimated Profit"]]]},
+    {"dt": "Report", "filters": [["name", "in", ["Bid PnL Summary", "Bid Cost Entry", "Bid Record Report"]]]},
 ]

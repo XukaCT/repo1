@@ -1,65 +1,8 @@
 [
- {
-  "docstatus": 0,
-  "doctype": "Workflow Action Master",
-  "modified": "2026-05-10 02:27:12.365299",
-  "name": "Approve",
-  "workflow_action_name": "Approve"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow Action Master",
-  "modified": "2026-05-10 02:27:12.366132",
-  "name": "Reject",
-  "workflow_action_name": "Reject"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow Action Master",
-  "modified": "2026-05-10 02:27:12.366593",
-  "name": "Review",
-  "workflow_action_name": "Review"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow Action Master",
-  "modified": "2026-05-12 05:13:36.578470",
-  "name": "Qualify",
-  "workflow_action_name": "Qualify"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow Action Master",
-  "modified": "2026-05-12 05:14:57.112749",
-  "name": "Activate",
-  "workflow_action_name": "Activate"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow Action Master",
-  "modified": "2026-05-12 05:15:33.971112",
-  "name": "Mark Won",
-  "workflow_action_name": "Mark Won"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow Action Master",
-  "modified": "2026-05-12 05:16:03.798811",
-  "name": "Mark Loss",
-  "workflow_action_name": "Mark Loss"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow Action Master",
-  "modified": "2026-05-12 05:16:36.033243",
-  "name": "Withdraw",
-  "workflow_action_name": "Withdraw"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow Action Master",
-  "modified": "2026-05-12 05:19:39.443113",
-  "name": "Submit Bid",
-  "workflow_action_name": "Submit Bid"
- }
+  { "docstatus": 0, "doctype": "Workflow Action Master", "name": "Qualify", "workflow_action_name": "Qualify" },
+  { "docstatus": 0, "doctype": "Workflow Action Master", "name": "Activate", "workflow_action_name": "Activate" },
+  { "docstatus": 0, "doctype": "Workflow Action Master", "name": "Mark Won", "workflow_action_name": "Mark Won" },
+  { "docstatus": 0, "doctype": "Workflow Action Master", "name": "Mark Loss", "workflow_action_name": "Mark Loss" },
+  { "docstatus": 0, "doctype": "Workflow Action Master", "name": "Withdraw", "workflow_action_name": "Withdraw" },
+  { "docstatus": 0, "doctype": "Workflow Action Master", "name": "Submit Bid", "workflow_action_name": "Submit Bid" }
 ]

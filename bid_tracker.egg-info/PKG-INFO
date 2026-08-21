@@ -1,6 +1,0 @@
-Metadata-Version: 2.4
-Name: bid_tracker
-Version: 0.1.0
-Summary: ERPNext Bid Tracker custom app
-Author-email: Bunmeng Te <tebunmeng2004@gmail.com>, Rudra Pandey <prudra1234@gmail.com>
-Requires-Python: >=3.10

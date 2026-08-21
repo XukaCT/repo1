@@ -1,13 +1,24 @@
 [project]
 name = "bid_tracker"
-version = "0.1.0"
-description = "ERPNext Bid Tracker custom app"
-requires-python = ">=3.10"
+version = "0.0.1"
+description = "Bid Management Application"
 authors = [
-    { name = "Bunmeng Te", email = "tebunmeng2004@gmail.com" },
-    { name = "Rudra Pandey", email = "prudra1234@gmail.com" }
+    { name = "Frappe Developer", email = "hello@example.com" }
+]
+requires-python = ">=3.10"
+readme = "README.md"
+dependencies = [
+    # Add any Python dependencies your app needs here
 ]
 
+[project.urls]
+Homepage = "https://github.com/your-repo/bid_tracker"
+
 [build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+# This block is strictly required for Frappe v15/v16 compatibility checking
+[tool.bench.frappe-dependencies]
+frappe = ">=16.0.0-dev,<=17.0.0"
+erpnext = ">=16.0.0-dev,<=17.0.0"

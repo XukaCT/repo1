@@ -1,195 +1,29 @@
 [
- {
-  "docstatus": 0,
-  "doctype": "Workflow",
-  "document_type": "Bid Record",
-  "enable_action_confirmation": 0,
-  "is_active": 1,
-  "modified": "2026-05-14 08:58:47.119254",
-  "name": "Bid Record Workflow",
-  "override_status": 0,
-  "send_email_alert": 1,
-  "states": [
-   {
-    "allow_edit": "BD Team",
-    "avoid_status_override": 0,
-    "doc_status": "0",
-    "evaluate_as_expression": 0,
-    "is_optional_state": 0,
-    "message": null,
-    "next_action_email_template": null,
-    "send_email": 1,
-    "state": "Draft",
-    "update_field": "status",
-    "update_value": "Draft",
-    "workflow_builder_id": null
-   },
-   {
-    "allow_edit": "BD Team",
-    "avoid_status_override": 0,
-    "doc_status": "0",
-    "evaluate_as_expression": 0,
-    "is_optional_state": 0,
-    "message": null,
-    "next_action_email_template": null,
-    "send_email": 1,
-    "state": "Qualifying",
-    "update_field": "status",
-    "update_value": "Qualifying",
-    "workflow_builder_id": null
-   },
-   {
-    "allow_edit": "BD Team",
-    "avoid_status_override": 0,
-    "doc_status": "0",
-    "evaluate_as_expression": 0,
-    "is_optional_state": 0,
-    "message": null,
-    "next_action_email_template": null,
-    "send_email": 1,
-    "state": "Active",
-    "update_field": "status",
-    "update_value": "Active",
-    "workflow_builder_id": null
-   },
-   {
-    "allow_edit": "BD Manager",
-    "avoid_status_override": 0,
-    "doc_status": "0",
-    "evaluate_as_expression": 0,
-    "is_optional_state": 0,
-    "message": null,
-    "next_action_email_template": null,
-    "send_email": 1,
-    "state": "Submitted",
-    "update_field": "status",
-    "update_value": "Submitted",
-    "workflow_builder_id": null
-   },
-   {
-    "allow_edit": "BD Manager",
-    "avoid_status_override": 0,
-    "doc_status": "0",
-    "evaluate_as_expression": 0,
-    "is_optional_state": 0,
-    "message": null,
-    "next_action_email_template": null,
-    "send_email": 1,
-    "state": "Won",
-    "update_field": "status",
-    "update_value": "Won",
-    "workflow_builder_id": null
-   },
-   {
-    "allow_edit": "BD Manager",
-    "avoid_status_override": 0,
-    "doc_status": "0",
-    "evaluate_as_expression": 0,
-    "is_optional_state": 0,
-    "message": null,
-    "next_action_email_template": null,
-    "send_email": 1,
-    "state": "Lost",
-    "update_field": "status",
-    "update_value": "Lost",
-    "workflow_builder_id": null
-   },
-   {
-    "allow_edit": "BD Manager",
-    "avoid_status_override": 0,
-    "doc_status": "0",
-    "evaluate_as_expression": 0,
-    "is_optional_state": 0,
-    "message": null,
-    "next_action_email_template": null,
-    "send_email": 1,
-    "state": "Withdrawn",
-    "update_field": "status",
-    "update_value": "Withdrawn",
-    "workflow_builder_id": null
-   }
-  ],
-  "transitions": [
-   {
-    "action": "Qualify",
-    "allow_self_approval": 1,
-    "allowed": "BD Team",
-    "condition": null,
-    "next_state": "Qualifying",
-    "send_email_to_creator": 0,
-    "state": "Draft",
-    "transition_tasks": null,
-    "workflow_builder_id": null
-   },
-   {
-    "action": "Activate",
-    "allow_self_approval": 1,
-    "allowed": "BD Team",
-    "condition": null,
-    "next_state": "Active",
-    "send_email_to_creator": 0,
-    "state": "Qualifying",
-    "transition_tasks": null,
-    "workflow_builder_id": null
-   },
-   {
-    "action": "Submit Bid",
-    "allow_self_approval": 1,
-    "allowed": "BD Team",
-    "condition": null,
-    "next_state": "Submitted",
-    "send_email_to_creator": 0,
-    "state": "Active",
-    "transition_tasks": null,
-    "workflow_builder_id": null
-   },
-   {
-    "action": "Mark Won",
-    "allow_self_approval": 1,
-    "allowed": "BD Manager",
-    "condition": null,
-    "next_state": "Won",
-    "send_email_to_creator": 0,
-    "state": "Submitted",
-    "transition_tasks": null,
-    "workflow_builder_id": null
-   },
-   {
-    "action": "Mark Loss",
-    "allow_self_approval": 1,
-    "allowed": "BD Manager",
-    "condition": null,
-    "next_state": "Lost",
-    "send_email_to_creator": 0,
-    "state": "Submitted",
-    "transition_tasks": null,
-    "workflow_builder_id": null
-   },
-   {
-    "action": "Withdraw",
-    "allow_self_approval": 1,
-    "allowed": "BD Manager",
-    "condition": null,
-    "next_state": "Withdrawn",
-    "send_email_to_creator": 0,
-    "state": "Active",
-    "transition_tasks": null,
-    "workflow_builder_id": null
-   },
-   {
-    "action": "Withdraw",
-    "allow_self_approval": 1,
-    "allowed": "BD Manager",
-    "condition": null,
-    "next_state": "Withdrawn",
-    "send_email_to_creator": 0,
-    "state": "Submitted",
-    "transition_tasks": null,
-    "workflow_builder_id": null
-   }
-  ],
-  "workflow_data": null,
-  "workflow_name": "Bid Record Workflow",
-  "workflow_state_field": "status"
- }
+  {
+    "docstatus": 0,
+    "doctype": "Workflow",
+    "document_type": "Bid Record",
+    "is_active": 1,
+    "name": "Bid Record Workflow",
+    "states": [
+      { "allow_edit": "BD Team", "state": "Draft", "update_field": "status", "update_value": "Draft" },
+      { "allow_edit": "BD Team", "state": "Qualifying", "update_field": "status", "update_value": "Qualifying" },
+      { "allow_edit": "BD Team", "state": "Active", "update_field": "status", "update_value": "Active" },
+      { "allow_edit": "BD Manager", "state": "Submitted", "update_field": "status", "update_value": "Submitted" },
+      { "allow_edit": "BD Manager", "state": "Won", "update_field": "status", "update_value": "Won" },
+      { "allow_edit": "BD Manager", "state": "Lost", "update_field": "status", "update_value": "Lost" },
+      { "allow_edit": "BD Manager", "state": "Withdrawn", "update_field": "status", "update_value": "Withdrawn" }
+    ],
+    "transitions": [
+      { "action": "Qualify", "allowed": "BD Team", "next_state": "Qualifying", "state": "Draft" },
+      { "action": "Activate", "allowed": "BD Team", "next_state": "Active", "state": "Qualifying" },
+      { "action": "Submit Bid", "allowed": "BD Team", "next_state": "Submitted", "state": "Active" },
+      { "action": "Mark Won", "allowed": "BD Manager", "next_state": "Won", "state": "Submitted" },
+      { "action": "Mark Loss", "allowed": "BD Manager", "next_state": "Lost", "state": "Submitted" },
+      { "action": "Withdraw", "allowed": "BD Manager", "next_state": "Withdrawn", "state": "Active" },
+      { "action": "Withdraw", "allowed": "BD Manager", "next_state": "Withdrawn", "state": "Submitted" }
+    ],
+    "workflow_name": "Bid Record Workflow",
+    "workflow_state_field": "status"
+  }
 ]

@@ -1,92 +1,9 @@
 [
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "question-sign",
-  "modified": "2026-05-10 02:27:12.356540",
-  "name": "Pending",
-  "style": "",
-  "workflow_state_name": "Pending"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "ok-sign",
-  "modified": "2026-05-10 02:27:12.357448",
-  "name": "Approved",
-  "style": "Success",
-  "workflow_state_name": "Approved"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "remove",
-  "modified": "2026-05-10 02:27:12.357939",
-  "name": "Rejected",
-  "style": "Danger",
-  "workflow_state_name": "Rejected"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
-  "modified": "2026-05-12 05:01:57.282120",
-  "name": "Qualifying",
-  "style": "Primary",
-  "workflow_state_name": "Qualifying"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
-  "modified": "2026-05-12 05:02:20.265519",
-  "name": "Active",
-  "style": "Primary",
-  "workflow_state_name": "Active"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
-  "modified": "2026-05-12 05:03:19.964327",
-  "name": "Lost",
-  "style": "Danger",
-  "workflow_state_name": "Lost"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
-  "modified": "2026-05-12 05:03:36.357594",
-  "name": "Withdrawn",
-  "style": "Danger",
-  "workflow_state_name": "Withdrawn"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
-  "modified": "2026-05-12 05:02:43.136101",
-  "name": "Submitted",
-  "style": "Info",
-  "workflow_state_name": "Submitted"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
-  "modified": "2026-05-11 09:35:45.636686",
-  "name": "Draft",
-  "style": "Warning",
-  "workflow_state_name": "Draft"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
-  "modified": "2026-05-12 05:03:01.660533",
-  "name": "Won",
-  "style": "Success",
-  "workflow_state_name": "Won"
- }
+  { "docstatus": 0, "doctype": "Workflow State", "name": "Qualifying", "style": "Primary", "workflow_state_name": "Qualifying" },
+  { "docstatus": 0, "doctype": "Workflow State", "name": "Active", "style": "Primary", "workflow_state_name": "Active" },
+  { "docstatus": 0, "doctype": "Workflow State", "name": "Lost", "style": "Danger", "workflow_state_name": "Lost" },
+  { "docstatus": 0, "doctype": "Workflow State", "name": "Withdrawn", "style": "Danger", "workflow_state_name": "Withdrawn" },
+  { "docstatus": 0, "doctype": "Workflow State", "name": "Submitted", "style": "Info", "workflow_state_name": "Submitted" },
+  { "docstatus": 0, "doctype": "Workflow State", "name": "Draft", "style": "Warning", "workflow_state_name": "Draft" },
+  { "docstatus": 0, "doctype": "Workflow State", "name": "Won", "style": "Success", "workflow_state_name": "Won" }
 ]
