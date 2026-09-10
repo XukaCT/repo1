@@ -20,6 +20,9 @@ doc_events = {
     "Bid Cost Entry": {
         "on_update": "bid_tracker.bid_management.api.update_bid_record_totals",
         "on_trash": "bid_tracker.bid_management.api.update_bid_record_totals",
+    },
+    "Bid Record": {
+        "on_update": "bid_tracker.events.broadcast_bid_update"
     }
 }
 
@@ -28,7 +31,7 @@ add_to_apps_screen = [
         "name": "bid_tracker",
         "logo": "/assets/frappe/images/frappe-framework-logo.svg",
         "title": "Bid Tracker",
-        "route": "/app/bid-tracker",
+        "route": "/desk/bid-tracker",
     }
 ]
 
