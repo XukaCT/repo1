@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import frappe
 from frappe.model.document import Document
 
@@ -94,5 +96,5 @@ class BidRecord(Document):
 def flt(value):
     try:
         return float(value or 0)
-    except Exception:
+    except (TypeError, ValueError):
         return 0.0

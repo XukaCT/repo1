@@ -12,6 +12,9 @@ doctype_js = {
 }
 
 doc_events = {
+    "Communication": {
+        "after_insert": "bid_tracker.email_parser.process_incoming_email"
+    },
     "Timesheet": {
         "on_update": "bid_tracker.bid_management.api.update_bid_record_totals",
         "on_submit": "bid_tracker.bid_management.api.update_bid_record_totals",
