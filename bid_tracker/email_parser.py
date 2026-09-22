@@ -1,12 +1,13 @@
 import frappe
-import re
+import re 
 from frappe.utils import strip_html
+
 
 def process_incoming_email(doc, method=None):
     # 1. Accept 'Email' (for production) and 'Other' (for our local test)
     if doc.communication_medium not in ["Email", "Other"] or doc.sent_or_received != "Received":
         return
-
+        
     subject = str(doc.subject or "")
     content = str(doc.text_content or strip_html(doc.content or ""))
     full_text = subject + " " + content
@@ -22,7 +23,7 @@ def process_incoming_email(doc, method=None):
         
     rfp_id = rfp_match.group(1)
 
-    # 4. Find the matching Bid Record (Title search only to avoid missing column error)
+    # 4. Find the matching Bid Record
     bids = frappe.db.sql("""
         SELECT name FROM `tabBid Record`
         WHERE bid_title LIKE %s
@@ -42,19 +43,45 @@ def process_incoming_email(doc, method=None):
         amount = float(clean_amount)
         
         if amount > 0:
-            # 6. Create the Bid Cost Entry!
+            bid_doc = frappe.get_doc("Bid Record", bid_name)
+            
+            # 6. IDEMPOTENCY CHECK: Does a quote from this sender already exist for this bid?
+            existing_entries = frappe.get_all(
+                "Bid Cost Entry",
+                filters={
+                    "bid_record": bid_name,
+                    "description": ["like", f"%{doc.sender}%"]
+                },
+                fields=["name", "amount"]
+            )
+            
+            if existing_entries:
+                existing_entry = existing_entries[0]
+                
+                # Scenario A: Exact duplicate email
+                if float(existing_entry.amount) == amount:
+                    frappe.logger().info(f"Ignored duplicate pricing email from {doc.sender} for {bid_name}.")
+                    return
+                
+                # Scenario B: Subcontractor revised their quote
+                else:
+                    frappe.db.set_value("Bid Cost Entry", existing_entry.name, "amount", amount)
+                    frappe.db.set_value("Bid Cost Entry", existing_entry.name, "description", f"Automated material pricing (UPDATED) from {doc.sender}. Subject: {subject}")
+                    
+                    bid_doc.add_comment("Info", f"🔄 Subcontractor ({doc.sender}) updated their quote from **${existing_entry.amount:,.2f}** to **${amount:,.2f}**.")
+                    frappe.db.commit()
+                    return
+
+            # Scenario C: Brand new quote (Original Logic)
             cost_entry = frappe.get_doc({
                 "doctype": "Bid Cost Entry",
                 "bid_record": bid_name,
                 "cost_type": "Materials",
                 "description": f"Automated material pricing from {doc.sender}. Subject: {subject}",
                 "amount": amount,
-                "added_by": frappe.session.user  # Forces Frappe to use your valid Admin account
+                "added_by": frappe.session.user
             })
             cost_entry.insert(ignore_permissions=True)
             
-            # Optional: Add an automatic comment on the Bid Record alerting the team
-            bid_doc = frappe.get_doc("Bid Record", bid_name)
-            bid_doc.add_comment("Info", f"🤖 Automatically logged Material Cost of **${amount:,.2f}** from subcontractor email.")
-            
+            bid_doc.add_comment("Info", f"💰 Automatically logged Material Cost of **${amount:,.2f}** from subcontractor email.")
             frappe.db.commit()

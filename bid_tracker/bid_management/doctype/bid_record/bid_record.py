@@ -16,7 +16,12 @@ class BidRecord(Document):
 
     def sync_customer_from_opportunity(self):
         if self.opportunity and not self.customer:
-            self.customer = frappe.db.get_value("Opportunity", self.opportunity, "party_name")
+            # Fetch both the party type and the party name
+            opp_from, party_name = frappe.db.get_value("Opportunity", self.opportunity, ["opportunity_from", "party_name"])
+            
+            # Only sync it if the Opportunity actually belongs to a Customer
+            if opp_from == "Customer":
+                self.customer = party_name
 
     def calculate_totals(self):
         self.total_manual_cost = self.get_manual_cost()

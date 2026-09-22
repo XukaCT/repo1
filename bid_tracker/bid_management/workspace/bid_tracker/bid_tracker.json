@@ -1,0 +1,181 @@
+{
+ "app": "bid_tracker",
+ "charts": [
+  {
+   "chart_name": "Bid Status Breakdown",
+   "label": "Bid Status Breakdown"
+  }
+ ],
+ "content": "[{\"id\":\"uF3BO4Gwzm\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Bid Tracker</span>\",\"col\":12}},{\"id\":\"ueujWt6j0-\",\"type\":\"card\",\"data\":{\"card_name\":\"Bid Management\",\"col\":4}},{\"id\":\"Sj-CJgZsFi\",\"type\":\"card\",\"data\":{\"card_name\":\"Financial Analysis\",\"col\":4}},{\"id\":\"J8BAT4cw75\",\"type\":\"card\",\"data\":{\"card_name\":\"Operational Reports\",\"col\":4}},{\"id\":\"VDHDVLUZH9\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"VG80jRi1wF\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"C8NTG-r43p\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Recent Bid Record\",\"col\":6}},{\"id\":\"-GT8Ojzjdk\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Recent Bid Cost Entry\",\"col\":6}},{\"id\":\"4Tt0p5lTOH\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Bid Status Breakdown\",\"col\":12}}]",
+ "creation": "2026-08-17 23:14:22.272041",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "money-coins-1",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Bid Tracker",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Financial Analysis",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Bid PnL Summary",
+   "link_count": 0,
+   "link_to": "Bid PnL Summary",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Pre-contract P&L Dashboard",
+   "link_count": 0,
+   "link_to": "dashboard-view",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Operational Reports",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Bid Record Report",
+   "link_count": 0,
+   "link_to": "Bid Record Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "report_ref_doctype": "Bid Record",
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Bid Cost Entry Report",
+   "link_count": 0,
+   "link_to": "Bid Cost Entry",
+   "link_type": "Report",
+   "onboard": 0,
+   "report_ref_doctype": "Bid Cost Entry",
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Bid Management",
+   "link_count": 5,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Bid Record",
+   "link_count": 0,
+   "link_to": "Bid Record",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Bid Cost Entry",
+   "link_count": 0,
+   "link_to": "Bid Cost Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Opportunity",
+   "link_count": 0,
+   "link_to": "Opportunity",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Lead",
+   "link_count": 0,
+   "link_to": "Lead",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tender",
+   "link_count": 0,
+   "link_to": "War Room Tender",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-09-22 15:28:56.871461",
+ "modified_by": "Administrator",
+ "module": "Bid Management",
+ "name": "Bid Tracker",
+ "number_cards": [],
+ "owner": "Administrator",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "Bid Cost Entry",
+   "label": "Recent Bid Cost Entry",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "Bid Record",
+   "label": "Recent Bid Record",
+   "quick_list_filter": "[]"
+  }
+ ],
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "BD Team"
+  },
+  {
+   "role": "BD Manager"
+  },
+  {
+   "role": "Finance Reviewer"
+  },
+  {
+   "role": "Executive Viewer"
+  }
+ ],
+ "sequence_id": 0.0,
+ "shortcuts": [],
+ "title": "Bid Tracker",
+ "type": "Workspace"
+}

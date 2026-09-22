@@ -9,6 +9,7 @@ after_install = "bid_tracker.install.after_install"
 
 doctype_js = {
     "Bid Record": "public/js/bid_record.js",
+    "Opportunity": "public/js/opportunity.js"
 }
 
 doc_events = {
@@ -26,6 +27,9 @@ doc_events = {
     },
     "Bid Record": {
         "on_update": "bid_tracker.events.broadcast_bid_update"
+    },
+    "Opportunity": {
+        "before_insert": "bid_tracker.events.map_lead_to_opportunity"
     }
 }
 
