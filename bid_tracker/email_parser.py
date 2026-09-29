@@ -1,7 +1,6 @@
 import frappe
-import re 
+import re
 from frappe.utils import strip_html
-
 
 def process_incoming_email(doc, method=None):
     # 1. Accept 'Email' (for production) and 'Other' (for our local test)
@@ -65,19 +64,25 @@ def process_incoming_email(doc, method=None):
                 
                 # Scenario B: Subcontractor revised their quote
                 else:
-                    frappe.db.set_value("Bid Cost Entry", existing_entry.name, "amount", amount)
-                    frappe.db.set_value("Bid Cost Entry", existing_entry.name, "description", f"Automated material pricing (UPDATED) from {doc.sender}. Subject: {subject}")
+                    # TRUNCATE to 140 chars to prevent DataError
+                    safe_desc = f"Updated quote from {doc.sender}. Subject: {subject}"[:140]
                     
-                    bid_doc.add_comment("Info", f"🔄 Subcontractor ({doc.sender}) updated their quote from **${existing_entry.amount:,.2f}** to **${amount:,.2f}**.")
+                    frappe.db.set_value("Bid Cost Entry", existing_entry.name, "amount", amount)
+                    frappe.db.set_value("Bid Cost Entry", existing_entry.name, "description", safe_desc)
+                    
+                    bid_doc.add_comment("Info", f"🔄 Subcontractor ({doc.sender}) updated their quote from **\({existing_entry.amount:,.2f}** to **\){amount:,.2f}**.")
                     frappe.db.commit()
                     return
 
-            # Scenario C: Brand new quote (Original Logic)
+            # Scenario C: Brand new quote
+            # TRUNCATE to 140 chars to prevent DataError
+            safe_desc = f"Automated material pricing from {doc.sender}. Subject: {subject}"[:140]
+            
             cost_entry = frappe.get_doc({
                 "doctype": "Bid Cost Entry",
                 "bid_record": bid_name,
                 "cost_type": "Materials",
-                "description": f"Automated material pricing from {doc.sender}. Subject: {subject}",
+                "description": safe_desc,
                 "amount": amount,
                 "added_by": frappe.session.user
             })
